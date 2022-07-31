@@ -1,8 +1,11 @@
 [package]
 name = "p7m-appointment"
+description = "Rust bindings for the appointment API of P7M"
 version = "0.11.0"
 authors = ["OpenAPI Generator team and contributors"]
 edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/projekt7m/appointment-rust"
 
 [dependencies]
 serde = "^1.0"
