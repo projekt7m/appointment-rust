@@ -4,16 +4,16 @@ All URIs are relative to *https://book.p7m.de/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**holidays_get**](HolidayApi.md#holidays_get) | **GET** /holidays | 
+[**get_holidays**](HolidayApi.md#get_holidays) | **GET** /holidays | Get the list of public holidays known by the system
 
 
 
-## holidays_get
+## get_holidays
 
-> crate::models::HolidayData holidays_get()
+> crate::models::HolidayData get_holidays()
+Get the list of public holidays known by the system
 
-
-get the list of holidays known by the system
+Get the list of public holidays known by the system
 
 ### Parameters
 
@@ -25,7 +25,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

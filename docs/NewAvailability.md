@@ -4,12 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **String** |  | 
 **worker_id** | **String** |  | 
-**day_of_week** | **String** |  | 
+**day_of_week** | [**crate::models::DayOfWeek**](DayOfWeek.md) |  | 
 **start_time** | **String** |  | 
 **end_time** | **String** |  | 
-**services** | **Vec<String>** |  | 
+**services** | Option<**Vec<String>**> |  | [optional]
 **not_before** | Option<[**String**](string.md)> |  | [optional]
 **not_after** | Option<[**String**](string.md)> |  | [optional]
 

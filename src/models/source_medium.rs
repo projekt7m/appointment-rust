@@ -9,26 +9,34 @@
  */
 
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum SourceMedium {
+    #[serde(rename = "WEB")]
+    WEB,
+    #[serde(rename = "PHONE")]
+    PHONE,
+    #[serde(rename = "STAFF")]
+    STAFF,
 
-
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ExtraQuestion {
-    #[serde(rename = "text")]
-    pub text: String,
-    #[serde(rename = "exactly_one")]
-    pub exactly_one: bool,
-    #[serde(rename = "options")]
-    pub options: Vec<crate::models::AnswerOption>,
 }
 
-impl ExtraQuestion {
-    pub fn new(text: String, exactly_one: bool, options: Vec<crate::models::AnswerOption>) -> ExtraQuestion {
-        ExtraQuestion {
-            text,
-            exactly_one,
-            options,
+impl ToString for SourceMedium {
+    fn to_string(&self) -> String {
+        match self {
+            Self::WEB => String::from("WEB"),
+            Self::PHONE => String::from("PHONE"),
+            Self::STAFF => String::from("STAFF"),
         }
     }
 }
+
+impl Default for SourceMedium {
+    fn default() -> SourceMedium {
+        Self::WEB
+    }
+}
+
+
 
 

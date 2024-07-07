@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **String** |  | 
 **name** | **String** |  | 
 **color** | **String** |  | 
 

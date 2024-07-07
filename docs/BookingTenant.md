@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tenant_id** | **String** |  | 
 **timezone** | **String** |  | 
-**reservation_limit_mode** | **String** |  | 
+**reservation_limit_mode** | [**crate::models::ReservationLimit**](ReservationLimit.md) |  | 
 **reservation_limit_date** | Option<[**String**](string.md)> |  | [optional]
 **reservation_limit_days** | Option<**i32**> |  | [optional]
 **address** | **String** |  | 

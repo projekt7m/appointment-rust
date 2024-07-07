@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**services** | [**Vec<crate::models::ServiceConfig>**](ServiceConfig.md) |  | 
+**services** | [**Vec<crate::models::Service>**](Service.md) |  | 
 **workers** | [**Vec<crate::models::WorkerConfig>**](WorkerConfig.md) |  | 
 **name** | **String** |  | 
 **address** | **Vec<String>** |  | 
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **calendar_extra_info** | **String** |  | 
 **required_conditions** | **Vec<String>** |  | 
+**time_zone** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **String** |  | 
 **name** | **String** |  | 
 **expenditure_minutes** | **i32** |  | 
 **default_tags** | **Vec<String>** |  | 

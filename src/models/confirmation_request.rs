@@ -12,21 +12,18 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ExtraQuestion {
-    #[serde(rename = "text")]
-    pub text: String,
-    #[serde(rename = "exactly_one")]
-    pub exactly_one: bool,
-    #[serde(rename = "options")]
-    pub options: Vec<crate::models::AnswerOption>,
+pub struct ConfirmationRequest {
+    #[serde(rename = "tenant_id")]
+    pub tenant_id: String,
+    #[serde(rename = "pin")]
+    pub pin: String,
 }
 
-impl ExtraQuestion {
-    pub fn new(text: String, exactly_one: bool, options: Vec<crate::models::AnswerOption>) -> ExtraQuestion {
-        ExtraQuestion {
-            text,
-            exactly_one,
-            options,
+impl ConfirmationRequest {
+    pub fn new(tenant_id: String, pin: String) -> ConfirmationRequest {
+        ConfirmationRequest {
+            tenant_id,
+            pin,
         }
     }
 }

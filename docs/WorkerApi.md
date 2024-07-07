@@ -4,20 +4,80 @@ All URIs are relative to *https://book.p7m.de/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**workers_get**](WorkerApi.md#workers_get) | **GET** /workers | 
-[**workers_id_delete**](WorkerApi.md#workers_id_delete) | **DELETE** /workers/{id} | 
-[**workers_id_get**](WorkerApi.md#workers_id_get) | **GET** /workers/{id} | 
-[**workers_id_put**](WorkerApi.md#workers_id_put) | **PUT** /workers/{id} | 
-[**workers_post**](WorkerApi.md#workers_post) | **POST** /workers | 
+[**delete_worker_by_id**](WorkerApi.md#delete_worker_by_id) | **DELETE** /workers/{id} | Deletes a worker by its ID
+[**get_worker_by_id**](WorkerApi.md#get_worker_by_id) | **GET** /workers/{id} | Get a single worker by its ID
+[**get_workers**](WorkerApi.md#get_workers) | **GET** /workers | Get the list of all workers
+[**post_worker**](WorkerApi.md#post_worker) | **POST** /workers | Create a new worker
+[**put_worker_by_id**](WorkerApi.md#put_worker_by_id) | **PUT** /workers/{id} | Update an existing worker
 
 
 
-## workers_get
+## delete_worker_by_id
 
-> crate::models::WorkerData workers_get()
+> delete_worker_by_id(id)
+Deletes a worker by its ID
+
+Deletes a worker by its ID
+
+### Parameters
 
 
-a worker is a person that offers to do a service
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **String** | ID of the worker | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_worker_by_id
+
+> crate::models::Worker get_worker_by_id(id)
+Get a single worker by its ID
+
+Get a single worker by its ID
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **String** | ID of the worker | [required] |
+
+### Return type
+
+[**crate::models::Worker**](Worker.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_workers
+
+> crate::models::WorkerData get_workers()
+Get the list of all workers
+
+Get the list of all workers  A worker is a person that offers to do a service
 
 ### Parameters
 
@@ -29,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -39,49 +99,19 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## workers_id_delete
+## post_worker
 
-> workers_id_delete(id)
+> crate::models::Worker post_worker(new_worker)
+Create a new worker
 
-
-deletes the given worker
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | worker id | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## workers_id_get
-
-> crate::models::Worker workers_id_get(id)
-
-
-Returns the given worker
+Create a new worker
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | worker id | [required] |
+**new_worker** | [**NewWorker**](NewWorker.md) | The worker to be created | [required] |
 
 ### Return type
 
@@ -89,38 +119,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## workers_id_put
-
-> crate::models::Worker workers_id_put(id, worker)
-
-
-updates the given worker
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | worker id | [required] |
-**worker** | [**Worker**](Worker.md) | the updated worker | [required] |
-
-### Return type
-
-[**crate::models::Worker**](Worker.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -130,19 +129,20 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## workers_post
+## put_worker_by_id
 
-> crate::models::Worker workers_post(new_worker)
+> crate::models::Worker put_worker_by_id(id, new_worker)
+Update an existing worker
 
-
-create a new worker
+Update an existing worker
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**new_worker** | [**NewWorker**](NewWorker.md) | the worker to be created | [required] |
+**id** | **String** | ID of the worker | [required] |
+**new_worker** | [**NewWorker**](NewWorker.md) | The updated worker | [required] |
 
 ### Return type
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

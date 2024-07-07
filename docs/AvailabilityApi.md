@@ -4,20 +4,50 @@ All URIs are relative to *https://book.p7m.de/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**availabilities_get**](AvailabilityApi.md#availabilities_get) | **GET** /availabilities | 
-[**availabilities_id_delete**](AvailabilityApi.md#availabilities_id_delete) | **DELETE** /availabilities/{id} | 
-[**availabilities_id_get**](AvailabilityApi.md#availabilities_id_get) | **GET** /availabilities/{id} | 
-[**availabilities_id_put**](AvailabilityApi.md#availabilities_id_put) | **PUT** /availabilities/{id} | 
-[**availabilities_post**](AvailabilityApi.md#availabilities_post) | **POST** /availabilities | 
+[**delete_availability_by_id**](AvailabilityApi.md#delete_availability_by_id) | **DELETE** /availabilities/{id} | Delete an availability
+[**get_availabilities**](AvailabilityApi.md#get_availabilities) | **GET** /availabilities | Get the list of availabilities
+[**get_availability_by_id**](AvailabilityApi.md#get_availability_by_id) | **GET** /availabilities/{id} | Request a single availability
+[**post_availabilities**](AvailabilityApi.md#post_availabilities) | **POST** /availabilities | Create a new availability period
+[**put_availability_by_id**](AvailabilityApi.md#put_availability_by_id) | **PUT** /availabilities/{id} | Update a single availability
 
 
 
-## availabilities_get
+## delete_availability_by_id
 
-> crate::models::AvailabilityData availabilities_get()
+> delete_availability_by_id(id)
+Delete an availability
+
+Delete an availability
+
+### Parameters
 
 
-an availability is an amout of time where services can be booked for a worker (but may also already be booked)
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **String** | ID of the availability | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_availabilities
+
+> crate::models::AvailabilityData get_availabilities()
+Get the list of availabilities
+
+Get the list of availabilities  An availability is an amout of time where services can be booked for a worker (But may also already be booked)
 
 ### Parameters
 
@@ -29,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -39,49 +69,19 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## availabilities_id_delete
+## get_availability_by_id
 
-> availabilities_id_delete(id)
+> crate::models::Availability get_availability_by_id(id)
+Request a single availability
 
-
-deletes the given availability
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | availability id | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## availabilities_id_get
-
-> crate::models::Availability availabilities_id_get(id)
-
-
-Returns the given availability
+Request a single availability
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | availability id | [required] |
+**id** | **String** | ID of the availability | [required] |
 
 ### Return type
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -99,20 +99,19 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## availabilities_id_put
+## post_availabilities
 
-> crate::models::Availability availabilities_id_put(id, availability)
+> crate::models::Availability post_availabilities(new_availability)
+Create a new availability period
 
-
-updates the given availability
+Create a new availability period
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | availability id | [required] |
-**availability** | [**Availability**](Availability.md) | the updated availability | [required] |
+**new_availability** | [**NewAvailability**](NewAvailability.md) | The availability to be created | [required] |
 
 ### Return type
 
@@ -120,7 +119,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -130,19 +129,20 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## availabilities_post
+## put_availability_by_id
 
-> crate::models::Availability availabilities_post(new_availability)
+> crate::models::Availability put_availability_by_id(id, new_availability)
+Update a single availability
 
-
-create a new availability period
+Update a single availability
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**new_availability** | [**NewAvailability**](NewAvailability.md) | the availability to be created | [required] |
+**id** | **String** | ID of the availability | [required] |
+**new_availability** | [**NewAvailability**](NewAvailability.md) | The updated availability | [required] |
 
 ### Return type
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

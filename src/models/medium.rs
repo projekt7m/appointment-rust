@@ -9,26 +9,34 @@
  */
 
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum Medium {
+    #[serde(rename = "SMS")]
+    SMS,
+    #[serde(rename = "VOICE_CALL")]
+    VOICECALL,
+    #[serde(rename = "EMAIL")]
+    EMAIL,
 
-
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ExtraQuestion {
-    #[serde(rename = "text")]
-    pub text: String,
-    #[serde(rename = "exactly_one")]
-    pub exactly_one: bool,
-    #[serde(rename = "options")]
-    pub options: Vec<crate::models::AnswerOption>,
 }
 
-impl ExtraQuestion {
-    pub fn new(text: String, exactly_one: bool, options: Vec<crate::models::AnswerOption>) -> ExtraQuestion {
-        ExtraQuestion {
-            text,
-            exactly_one,
-            options,
+impl ToString for Medium {
+    fn to_string(&self) -> String {
+        match self {
+            Self::SMS => String::from("SMS"),
+            Self::VOICECALL => String::from("VOICE_CALL"),
+            Self::EMAIL => String::from("EMAIL"),
         }
     }
 }
+
+impl Default for Medium {
+    fn default() -> Medium {
+        Self::SMS
+    }
+}
+
+
 
 

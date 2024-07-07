@@ -9,26 +9,31 @@
  */
 
 
+/// 
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum ReservationLimit {
+    #[serde(rename = "BY_DATE")]
+    DATE,
+    #[serde(rename = "BY_DAYS")]
+    DAYS,
 
-
-#[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ExtraQuestion {
-    #[serde(rename = "text")]
-    pub text: String,
-    #[serde(rename = "exactly_one")]
-    pub exactly_one: bool,
-    #[serde(rename = "options")]
-    pub options: Vec<crate::models::AnswerOption>,
 }
 
-impl ExtraQuestion {
-    pub fn new(text: String, exactly_one: bool, options: Vec<crate::models::AnswerOption>) -> ExtraQuestion {
-        ExtraQuestion {
-            text,
-            exactly_one,
-            options,
+impl ToString for ReservationLimit {
+    fn to_string(&self) -> String {
+        match self {
+            Self::DATE => String::from("BY_DATE"),
+            Self::DAYS => String::from("BY_DAYS"),
         }
     }
 }
+
+impl Default for ReservationLimit {
+    fn default() -> ReservationLimit {
+        Self::DATE
+    }
+}
+
+
 
 

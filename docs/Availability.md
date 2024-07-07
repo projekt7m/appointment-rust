@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **availability_id** | **String** |  | 
 **tenant_id** | **String** |  | 
 **worker_id** | **String** |  | 
-**day_of_week** | **String** |  | 
+**day_of_week** | [**crate::models::DayOfWeek**](DayOfWeek.md) |  | 
 **start_time** | **String** |  | 
 **end_time** | **String** |  | 
 **services** | **Vec<String>** |  | 
