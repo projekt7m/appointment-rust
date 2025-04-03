@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availability_id** | **String** |  | 
-**tenant_id** | **String** |  | 
-**worker_id** | **String** |  | 
-**day_of_week** | [**crate::models::DayOfWeek**](DayOfWeek.md) |  | 
+**availability_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**tenant_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**worker_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**day_of_week** | [**models::DayOfWeek**](DayOfWeek.md) |  | 
 **start_time** | **String** |  | 
 **end_time** | **String** |  | 
-**services** | **Vec<String>** |  | 
+**services** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | 
 **not_before** | Option<[**String**](string.md)> |  | [optional]
 **not_after** | Option<[**String**](string.md)> |  | [optional]
 

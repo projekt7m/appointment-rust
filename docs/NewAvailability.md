@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**worker_id** | **String** |  | 
-**day_of_week** | [**crate::models::DayOfWeek**](DayOfWeek.md) |  | 
+**worker_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**day_of_week** | [**models::DayOfWeek**](DayOfWeek.md) |  | 
 **start_time** | **String** |  | 
 **end_time** | **String** |  | 
-**services** | Option<**Vec<String>**> |  | [optional]
+**services** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **not_before** | Option<[**String**](string.md)> |  | [optional]
 **not_after** | Option<[**String**](string.md)> |  | [optional]
 

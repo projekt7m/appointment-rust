@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **String** |  | 
-**service_id** | **String** |  | 
-**worker_id** | **String** |  | 
+**tenant_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**service_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**worker_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **firstname** | **String** |  | 
 **lastname** | **String** |  | 
 **email** | **String** |  | 

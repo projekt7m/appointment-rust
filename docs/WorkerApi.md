@@ -17,14 +17,12 @@ Method | HTTP request | Description
 > delete_worker_by_id(id)
 Deletes a worker by its ID
 
-Deletes a worker by its ID
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the worker | [required] |
+**id** | **uuid::Uuid** | ID of the worker | [required] |
 
 ### Return type
 
@@ -44,9 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_worker_by_id
 
-> crate::models::Worker get_worker_by_id(id)
-Get a single worker by its ID
-
+> models::Worker get_worker_by_id(id)
 Get a single worker by its ID
 
 ### Parameters
@@ -54,11 +50,11 @@ Get a single worker by its ID
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the worker | [required] |
+**id** | **uuid::Uuid** | ID of the worker | [required] |
 
 ### Return type
 
-[**crate::models::Worker**](Worker.md)
+[**models::Worker**](Worker.md)
 
 ### Authorization
 
@@ -74,10 +70,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_workers
 
-> crate::models::WorkerData get_workers()
+> models::ListWrapperWorker get_workers()
 Get the list of all workers
 
-Get the list of all workers  A worker is a person that offers to do a service
+A worker is a person that offers to do a service
 
 ### Parameters
 
@@ -85,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::WorkerData**](WorkerData.md)
+[**models::ListWrapperWorker**](ListWrapper_Worker.md)
 
 ### Authorization
 
@@ -101,9 +97,7 @@ This endpoint does not need any parameter.
 
 ## post_worker
 
-> crate::models::Worker post_worker(new_worker)
-Create a new worker
-
+> models::Worker post_worker(new_worker)
 Create a new worker
 
 ### Parameters
@@ -115,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Worker**](Worker.md)
+[**models::Worker**](Worker.md)
 
 ### Authorization
 
@@ -131,9 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_worker_by_id
 
-> crate::models::Worker put_worker_by_id(id, new_worker)
-Update an existing worker
-
+> models::Worker put_worker_by_id(id, new_worker)
 Update an existing worker
 
 ### Parameters
@@ -141,12 +133,12 @@ Update an existing worker
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the worker | [required] |
+**id** | **uuid::Uuid** | ID of the worker | [required] |
 **new_worker** | [**NewWorker**](NewWorker.md) | The updated worker | [required] |
 
 ### Return type
 
-[**crate::models::Worker**](Worker.md)
+[**models::Worker**](Worker.md)
 
 ### Authorization
 

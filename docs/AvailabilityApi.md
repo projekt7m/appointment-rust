@@ -17,14 +17,12 @@ Method | HTTP request | Description
 > delete_availability_by_id(id)
 Delete an availability
 
-Delete an availability
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the availability | [required] |
+**id** | **uuid::Uuid** | ID of the availability | [required] |
 
 ### Return type
 
@@ -44,10 +42,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_availabilities
 
-> crate::models::AvailabilityData get_availabilities()
+> models::ListWrapperAvailability get_availabilities()
 Get the list of availabilities
 
-Get the list of availabilities  An availability is an amout of time where services can be booked for a worker (But may also already be booked)
+An availability is an amout of time where services can be booked for a worker (But may also already be booked)
 
 ### Parameters
 
@@ -55,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::AvailabilityData**](AvailabilityData.md)
+[**models::ListWrapperAvailability**](ListWrapper_Availability.md)
 
 ### Authorization
 
@@ -71,9 +69,7 @@ This endpoint does not need any parameter.
 
 ## get_availability_by_id
 
-> crate::models::Availability get_availability_by_id(id)
-Request a single availability
-
+> models::Availability get_availability_by_id(id)
 Request a single availability
 
 ### Parameters
@@ -81,11 +77,11 @@ Request a single availability
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the availability | [required] |
+**id** | **uuid::Uuid** | ID of the availability | [required] |
 
 ### Return type
 
-[**crate::models::Availability**](Availability.md)
+[**models::Availability**](Availability.md)
 
 ### Authorization
 
@@ -101,9 +97,7 @@ Name | Type | Description  | Required | Notes
 
 ## post_availabilities
 
-> crate::models::Availability post_availabilities(new_availability)
-Create a new availability period
-
+> models::Availability post_availabilities(new_availability)
 Create a new availability period
 
 ### Parameters
@@ -115,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Availability**](Availability.md)
+[**models::Availability**](Availability.md)
 
 ### Authorization
 
@@ -131,9 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_availability_by_id
 
-> crate::models::Availability put_availability_by_id(id, new_availability)
-Update a single availability
-
+> models::Availability put_availability_by_id(id, new_availability)
 Update a single availability
 
 ### Parameters
@@ -141,12 +133,12 @@ Update a single availability
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the availability | [required] |
+**id** | **uuid::Uuid** | ID of the availability | [required] |
 **new_availability** | [**NewAvailability**](NewAvailability.md) | The updated availability | [required] |
 
 ### Return type
 
-[**crate::models::Availability**](Availability.md)
+[**models::Availability**](Availability.md)
 
 ### Authorization
 

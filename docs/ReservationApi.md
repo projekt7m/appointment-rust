@@ -18,14 +18,12 @@ Method | HTTP request | Description
 > delete_reservation_by_id(id)
 Delete the reservation with the given ID
 
-Delete the reservation with the given ID
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the reservation | [required] |
+**id** | **uuid::Uuid** | ID of the reservation | [required] |
 
 ### Return type
 
@@ -45,10 +43,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_reservations
 
-> crate::models::ReservationData get_reservations(start_time_min, start_time_max, tag_id)
+> models::ListWrapperReservation get_reservations(start_time_min, start_time_max, tag_id)
 Get all reservations
 
-Get all reservations  A reservation is an amount of time booked by a patient or blocked by the tenant
+A reservation is an amount of time booked by a patient or blocked by the tenant
 
 ### Parameters
 
@@ -57,11 +55,11 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **start_time_min** | Option<**String**> | only return results with a startTime of at least this value (inclusive) |  |
 **start_time_max** | Option<**String**> | only return results with a startTime of less than this value (exclusive) |  |
-**tag_id** | Option<**String**> | only return results with this tag ID set |  |
+**tag_id** | Option<**uuid::Uuid**> | only return results with this tag ID set |  |
 
 ### Return type
 
-[**crate::models::ReservationData**](ReservationData.md)
+[**models::ListWrapperReservation**](ListWrapper_Reservation.md)
 
 ### Authorization
 
@@ -77,9 +75,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_reservations_by_id
 
-> crate::models::Reservation get_reservations_by_id(id)
-Get a single reservation identified by its ID
-
+> models::Reservation get_reservations_by_id(id)
 Get a single reservation identified by its ID
 
 ### Parameters
@@ -87,11 +83,11 @@ Get a single reservation identified by its ID
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the reservation | [required] |
+**id** | **uuid::Uuid** | ID of the reservation | [required] |
 
 ### Return type
 
-[**crate::models::Reservation**](Reservation.md)
+[**models::Reservation**](Reservation.md)
 
 ### Authorization
 
@@ -107,9 +103,7 @@ Name | Type | Description  | Required | Notes
 
 ## post_reservations
 
-> crate::models::Reservation post_reservations(new_reservation)
-Create a new reservation
-
+> models::Reservation post_reservations(new_reservation)
 Create a new reservation
 
 ### Parameters
@@ -121,7 +115,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Reservation**](Reservation.md)
+[**models::Reservation**](Reservation.md)
 
 ### Authorization
 
@@ -137,9 +131,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_reservation_by_id
 
-> crate::models::Reservation put_reservation_by_id(id, reservation)
-Update an existing reservation
-
+> models::Reservation put_reservation_by_id(id, reservation)
 Update an existing reservation
 
 ### Parameters
@@ -147,12 +139,12 @@ Update an existing reservation
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the reservation | [required] |
+**id** | **uuid::Uuid** | ID of the reservation | [required] |
 **reservation** | [**Reservation**](Reservation.md) | The updated reservation | [required] |
 
 ### Return type
 
-[**crate::models::Reservation**](Reservation.md)
+[**models::Reservation**](Reservation.md)
 
 ### Authorization
 
@@ -168,9 +160,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_reservation_tags_by_id
 
-> crate::models::Reservation put_reservation_tags_by_id(id, request_body)
-Update (only) the tags of a given reservation
-
+> models::Reservation put_reservation_tags_by_id(id, uuid_colon_colon_uuid)
 Update (only) the tags of a given reservation
 
 ### Parameters
@@ -178,12 +168,12 @@ Update (only) the tags of a given reservation
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the reservation | [required] |
-**request_body** | [**Vec<String>**](String.md) | The updated list of tags | [required] |
+**id** | **uuid::Uuid** | ID of the reservation | [required] |
+**uuid_colon_colon_uuid** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) | The updated list of tags | [required] |
 
 ### Return type
 
-[**crate::models::Reservation**](Reservation.md)
+[**models::Reservation**](Reservation.md)
 
 ### Authorization
 

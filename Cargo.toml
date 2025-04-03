@@ -1,20 +1,17 @@
 [package]
 name = "p7m-appointment"
 description = "Rust bindings for the appointment API of P7M"
-version = "0.12.1"
-authors = ["OpenAPI Generator team and contributors"]
-edition = "2018"
+version = "0.13.1"
+authors = ["tech@p7m.de"]
 license = "Apache-2.0"
 repository = "https://github.com/projekt7m/appointment-rust"
+edition = "2021"
 
 [dependencies]
-serde = "^1.0"
-serde_derive = "^1.0"
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
 serde_json = "^1.0"
-url = "^2.2"
-[dependencies.reqwest]
-version = "^0.11"
-default-features = false
-features = ["json", "multipart", "rustls-tls"]
-
-[dev-dependencies]
+serde_repr = "^0.1"
+url = "^2.5"
+uuid = { version = "^1.8", features = ["serde", "v4"] }
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart", "rustls-tls"] }

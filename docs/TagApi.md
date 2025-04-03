@@ -17,14 +17,12 @@ Method | HTTP request | Description
 > delete_tag_by_id(id)
 Delete a tag by ID
 
-Delete a tag by ID
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the tag | [required] |
+**id** | **uuid::Uuid** | ID of the tag | [required] |
 
 ### Return type
 
@@ -44,9 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_tag_by_id
 
-> crate::models::Tag get_tag_by_id(id)
-Get a single tag by its ID
-
+> models::Tag get_tag_by_id(id)
 Get a single tag by its ID
 
 ### Parameters
@@ -54,11 +50,11 @@ Get a single tag by its ID
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the tag | [required] |
+**id** | **uuid::Uuid** | ID of the tag | [required] |
 
 ### Return type
 
-[**crate::models::Tag**](Tag.md)
+[**models::Tag**](Tag.md)
 
 ### Authorization
 
@@ -74,10 +70,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_tags
 
-> crate::models::TagData get_tags()
+> models::ListWrapperTag get_tags()
 Get all tags
 
-Get all tags  A tag is a customer defined attribute, that can be placed on other objects.
+A tag is a customer defined attribute, that can be placed on other objects.
 
 ### Parameters
 
@@ -85,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::TagData**](TagData.md)
+[**models::ListWrapperTag**](ListWrapper_Tag.md)
 
 ### Authorization
 
@@ -101,9 +97,7 @@ This endpoint does not need any parameter.
 
 ## post_tag
 
-> crate::models::Tag post_tag(new_tag)
-Create a new tag
-
+> models::Tag post_tag(new_tag)
 Create a new tag
 
 ### Parameters
@@ -115,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Tag**](Tag.md)
+[**models::Tag**](Tag.md)
 
 ### Authorization
 
@@ -131,9 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_tag_by_id
 
-> crate::models::Tag put_tag_by_id(id, new_tag)
-Updates an existing tag
-
+> models::Tag put_tag_by_id(id, new_tag)
 Updates an existing tag
 
 ### Parameters
@@ -141,12 +133,12 @@ Updates an existing tag
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the tag | [required] |
+**id** | **uuid::Uuid** | ID of the tag | [required] |
 **new_tag** | [**NewTag**](NewTag.md) | The updated tag | [required] |
 
 ### Return type
 
-[**crate::models::Tag**](Tag.md)
+[**models::Tag**](Tag.md)
 
 ### Authorization
 

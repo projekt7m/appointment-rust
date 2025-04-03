@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**services** | [**Vec<crate::models::Service>**](Service.md) |  | 
-**workers** | [**Vec<crate::models::WorkerConfig>**](WorkerConfig.md) |  | 
+**services** | [**Vec<models::Service>**](Service.md) |  | 
+**workers** | [**Vec<models::WorkerConfig>**](WorkerConfig.md) |  | 
 **name** | **String** |  | 
 **address** | **Vec<String>** |  | 
 **phone** | **String** |  | 

@@ -17,14 +17,12 @@ Method | HTTP request | Description
 > delete_service_by_id(id)
 Delete a service by its ID
 
-Delete a service by its ID
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the service | [required] |
+**id** | **uuid::Uuid** | ID of the service | [required] |
 
 ### Return type
 
@@ -44,9 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_service_by_id
 
-> crate::models::Service get_service_by_id(id)
-Get a service by its ID
-
+> models::Service get_service_by_id(id)
 Get a service by its ID
 
 ### Parameters
@@ -54,11 +50,11 @@ Get a service by its ID
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the service | [required] |
+**id** | **uuid::Uuid** | ID of the service | [required] |
 
 ### Return type
 
-[**crate::models::Service**](Service.md)
+[**models::Service**](Service.md)
 
 ### Authorization
 
@@ -74,10 +70,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_services
 
-> crate::models::ServiceData get_services()
+> models::ListWrapperService get_services()
 Get list of all services
 
-Get list of all services  A service is an action that can be selected and booked by a patient
+A service is an action that can be selected and booked by a patient
 
 ### Parameters
 
@@ -85,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ServiceData**](ServiceData.md)
+[**models::ListWrapperService**](ListWrapper_Service.md)
 
 ### Authorization
 
@@ -101,9 +97,7 @@ This endpoint does not need any parameter.
 
 ## post_service
 
-> crate::models::Service post_service(new_service)
-Create a new service
-
+> models::Service post_service(new_service)
 Create a new service
 
 ### Parameters
@@ -115,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Service**](Service.md)
+[**models::Service**](Service.md)
 
 ### Authorization
 
@@ -131,9 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_service_by_id
 
-> crate::models::Service put_service_by_id(id, new_service)
-Updates a single service
-
+> models::Service put_service_by_id(id, new_service)
 Updates a single service
 
 ### Parameters
@@ -141,12 +133,12 @@ Updates a single service
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the service | [required] |
+**id** | **uuid::Uuid** | ID of the service | [required] |
 **new_service** | [**NewService**](NewService.md) | The updated service | [required] |
 
 ### Return type
 
-[**crate::models::Service**](Service.md)
+[**models::Service**](Service.md)
 
 ### Authorization
 

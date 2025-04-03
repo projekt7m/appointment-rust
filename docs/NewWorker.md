@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **description** | Option<**String**> |  | [optional]
-**services** | **Vec<String>** |  | 
-**default_tags** | **Vec<String>** |  | 
+**services** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | 
+**default_tags** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

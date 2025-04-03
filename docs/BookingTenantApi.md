@@ -17,14 +17,12 @@ Method | HTTP request | Description
 > delete_booking_tenant_by_id(id)
 Delete a booking tenant by ID
 
-Delete a booking tenant by ID
-
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the booking tenant | [required] |
+**id** | **uuid::Uuid** | ID of the booking tenant | [required] |
 
 ### Return type
 
@@ -44,9 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_booking_tenant_by_id
 
-> crate::models::BookingTenant get_booking_tenant_by_id(id)
-Get a (booking) tenant as specified by its ID
-
+> models::BookingTenant get_booking_tenant_by_id(id)
 Get a (booking) tenant as specified by its ID
 
 ### Parameters
@@ -54,11 +50,11 @@ Get a (booking) tenant as specified by its ID
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the (booking) tenant | [required] |
+**id** | **uuid::Uuid** | ID of the (booking) tenant | [required] |
 
 ### Return type
 
-[**crate::models::BookingTenant**](BookingTenant.md)
+[**models::BookingTenant**](BookingTenant.md)
 
 ### Authorization
 
@@ -74,10 +70,10 @@ Name | Type | Description  | Required | Notes
 
 ## get_booking_tenants
 
-> crate::models::BookingTenantData get_booking_tenants()
+> models::ListWrapperBookingTenant get_booking_tenants()
 Get list of booking tenants
 
-Get list of booking tenants  A booking tenant is a tenant as the appointment API sees it.  Data her eshould more or less mirror the information of the Tenant as it is configured in the authentication and user API. Especially the `tenantId` must match the value used there, else the services cannot relate data to the data of a different micro service.
+A booking tenant is a tenant as the appointment API sees it.  Data her eshould more or less mirror the information of the Tenant as it is configured in the authentication and user API. Especially the `tenantId` must match the value used there, else the services cannot relate data to the data of a different micro service.
 
 ### Parameters
 
@@ -85,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::BookingTenantData**](BookingTenantData.md)
+[**models::ListWrapperBookingTenant**](ListWrapper_BookingTenant.md)
 
 ### Authorization
 
@@ -101,10 +97,10 @@ This endpoint does not need any parameter.
 
 ## post_booking_tenant
 
-> crate::models::BookingTenant post_booking_tenant(booking_tenant)
+> models::BookingTenant post_booking_tenant(booking_tenant)
 Create a new booking tenant
 
-Create a new booking tenant  A booking tenant is a tenant as the appointment API sees it.  Data here should more or less mirror the information of the Tenant as it is configured in the authentication and user API. Especially the `tenantId` must match the value used there, else the services cannot relate data to the data of a different micro service.  With this request you create a booking tenant that does not exist before. This endpoint is probably only useful to the system itself when a new tenant is provisioned on the appointment API. If you want to change values of a booking tenant, then you have to use the `PUT` method on the existing booking tenant.
+A booking tenant is a tenant as the appointment API sees it.  Data here should more or less mirror the information of the Tenant as it is configured in the authentication and user API. Especially the `tenantId` must match the value used there, else the services cannot relate data to the data of a different micro service.  With this request you create a booking tenant that does not exist before. This endpoint is probably only useful to the system itself when a new tenant is provisioned on the appointment API. If you want to change values of a booking tenant, then you have to use the `PUT` method on the existing booking tenant.
 
 ### Parameters
 
@@ -115,7 +111,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::BookingTenant**](BookingTenant.md)
+[**models::BookingTenant**](BookingTenant.md)
 
 ### Authorization
 
@@ -131,9 +127,7 @@ Name | Type | Description  | Required | Notes
 
 ## put_booking_tenant_by_id
 
-> crate::models::BookingTenant put_booking_tenant_by_id(id, booking_tenant)
-Update an existing booking tenant
-
+> models::BookingTenant put_booking_tenant_by_id(id, booking_tenant)
 Update an existing booking tenant
 
 ### Parameters
@@ -141,12 +135,12 @@ Update an existing booking tenant
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**id** | **String** | ID of the (booking) tenant | [required] |
+**id** | **uuid::Uuid** | ID of the (booking) tenant | [required] |
 **booking_tenant** | [**BookingTenant**](BookingTenant.md) | The updated booking tenant | [required] |
 
 ### Return type
 
-[**crate::models::BookingTenant**](BookingTenant.md)
+[**models::BookingTenant**](BookingTenant.md)
 
 ### Authorization
 
